@@ -1,0 +1,11 @@
+---
+applications:
+- name: capgemini_s-0.1.0
+  memory: 768M
+  instances: 1
+  random-route: true
+  path: capgemini_s-0.1.0.jar
+  services: 
+  - mysql
+  buildpacks:
+  - https://github.com/cloudfoundry/java-buildpack

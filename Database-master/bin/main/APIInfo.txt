@@ -1,0 +1,70 @@
+Database API
+--------------------------
+https://database.cfapps.io
+
+Valid Routes
+--------------------------
+HTTP Method     Route           Expected JSON Format                         Example Return Value
+POST            /save           {                                            { accountId : "22" }    
+    								"username": "JT101,
+								    "firstName": "Jason",
+								    "lastName": "Tokarski",
+								    "dob": "01-01-2000",
+								    "ssn": "123-45-6789",
+								    "email": "falko@email.com",
+								    "mobileNumber": "123456789",
+								    "homeAddress": "300 Tom Lane",
+								    "mailingAddress": "404 Dawn",
+								    "password": "123abc",
+								    "accountType": "CHECKING",
+								    "balance": 400
+								}     
+								
+Notes: Saves a user to the database
+--------------------------------------------------------------------------------------------------------------------------------------                             
+HTTP Method     Route                     Example Return Value
+GET             /checkuser/{username}     { userExists : "1" }   
+  
+Notes: Checks if a user exists. If the user exists return 1, else return 0
+--------------------------------------------------------------------------------------------------------------------------------------
+HTTP Method     Route                     Example Return Value
+GET             /getallusers             {
+											"username": "bigfalk2",
+										    "firstName": "Jojo2",
+										    "lastName": "Jimbo2",
+										    "dob": "01-01-2000",
+										    "ssn": "123-45-6789",
+										    "email": "falko@email.com",
+										    "mobileNumber": "123456789",
+										    "homeAddress": "100 homeAddress",
+										    "mailingAddress": "100 mailingAddress",
+										    "password": null,
+										    "accountType": "CHECKING",
+										    "balance": 400
+										}
+									
+Notes: Returns a list of JSON objects containing each user
+--------------------------------------------------------------------------------------------------------------------------------------
+	
+				
+Token API
+--------------------------
+https://token2.cfapps.io
+
+HTTP Method		Route					Example Return Value
+GET				/providetoken			{
+											"token" : "123"
+										}
+Notes: Returns the token value 123
+--------------------------------------------------------------------------------------------------------------------------------------
+HTTP Method     Route				    Expected JSON Format			            Example Return Value			
+POST			/checktoken				{                                           {
+											"token" : "123"                         	"tokenCorrect": "0"
+										}											}						
+
+Notes: Returns tokenCorrect value 0 if the token is correct, otherwise return 1
+--------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
